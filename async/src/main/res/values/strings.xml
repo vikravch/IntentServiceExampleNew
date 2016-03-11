@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AsyncTask</string>
+    <string name="button_firs">First</string>
+    <string name="button_second">Second</string>
+</resources>

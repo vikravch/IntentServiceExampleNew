@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">IntentServiceExample</string>
+    <string name="button_load">Load</string>
+</resources>
