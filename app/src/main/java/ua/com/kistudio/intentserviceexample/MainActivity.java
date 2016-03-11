@@ -4,19 +4,28 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private static final int PREF_REQUEST = 101;
     JSONObject jsonObjectUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,4 +72,41 @@ public class MainActivity extends AppCompatActivity {
         JSONIntentService.getOneUser(this,3);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(Prefs.MENU_ITEM_SETTINGS);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getTitle().equals(Prefs.MENU_ITEM_SETTINGS)){
+            Log.d(Prefs.LOG_TAG,"Clicked on Settings");
+            Intent intentPrefs = new Intent(this,MySettinsActivity.class);
+            startActivityForResult(intentPrefs, PREF_REQUEST);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case PREF_REQUEST:
+                showPrefs();
+                break;
+        }
+    }
+
+    private void showPrefs() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        Map<String,Object> prefsMap = (Map<String, Object>) sharedPreferences.getAll();
+
+        for (String name: prefsMap.keySet()  ){
+            Log.d(Prefs.LOG_TAG,name+" - "+prefsMap.get(name));
+        }
+
+    }
 }

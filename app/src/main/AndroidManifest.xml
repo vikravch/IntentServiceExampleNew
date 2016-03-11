@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".MySettinsActivity"></activity>
         <service
             android:name=".JSONIntentService"
             android:exported="false"></service>

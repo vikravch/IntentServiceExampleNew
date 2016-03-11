@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">IntentServiceExample</string>
     <string name="button_load">Load</string>
+    <string name="setting_category_shedule">Notifications</string>
+    <string name="summary_pref_alarm_set">Set if alarm manager is active</string>
+    <string name="title_pref_alarm_set">Set Alarm</string>
+    <string name="title_pref_name_set">Name</string>
+    <string name="summary_pref_name_set">Your name</string>
+    <string name="title_pref_time_set">Time</string>
+    <string name="summary_pref_time_set">Time when alarm start</string>
 </resources>
