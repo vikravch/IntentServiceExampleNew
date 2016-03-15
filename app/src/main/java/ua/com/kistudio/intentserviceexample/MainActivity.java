@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         tvOut.setText(userInfo);*/
-        JSONIntentService.getOneUser(this,3);
+        JSONIntentService.getOneUser(this,2);
     }
 
     @Override

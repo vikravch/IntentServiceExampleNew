@@ -20,8 +20,8 @@ import java.util.concurrent.ExecutionException;
  */
 public class JSONIntentService extends IntentService {
 
-    private static final String ACTION_GET_ONE = "ua.com.kistudio.intentserviceexample.action.GET_ONE";
-    private static final String EXTRA_ID = "ua.com.kistudio.intentserviceexample.extra.ID";
+    public static final String ACTION_GET_ONE = "ua.com.kistudio.intentserviceexample.action.GET_ONE";
+    public static final String EXTRA_ID = "ua.com.kistudio.intentserviceexample.extra.ID";
 
     public static final String SERVICE_ACTION_BROADCAST
             = "ua.com.kistudio.intentserviceexample.action.BROADCAST";
@@ -55,7 +55,7 @@ public class JSONIntentService extends IntentService {
     private void handleActionGetOne(int localId) {
         JSONObject jsonObjectUser;
         AsyncJsonQuery asyncJsonQuery = new AsyncJsonQuery();
-        asyncJsonQuery.execute(Prefs.TEST_URL);
+        asyncJsonQuery.execute(String.format(Prefs.URL_TEMPLATE,localId));
         String userInfo = "Unknown";
         try {
             jsonObjectUser = asyncJsonQuery.get();

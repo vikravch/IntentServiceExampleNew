@@ -8,4 +8,7 @@
     <string name="summary_pref_name_set">Your name</string>
     <string name="title_pref_time_set">Time</string>
     <string name="summary_pref_time_set">Time when alarm start</string>
+    <string name="key_pref_alarm_set">prefAlarmSet</string>
+    <string name="key_pref_name_set">prefNameSet</string>
+    <string name="key_pref_time_set">prefTimeSet</string>
 </resources>
