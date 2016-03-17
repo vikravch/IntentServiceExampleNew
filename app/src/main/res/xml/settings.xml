@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/setting_category_shedule">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/key_pref_alarm_set"
+            android:summary="@string/summary_pref_alarm_set"
+            android:title="@string/title_pref_alarm_set"/>
+        <EditTextPreference
+            android:title="@string/title_pref_name_set"
+            android:summary="@string/summary_pref_name_set"
+            android:key="@string/key_pref_name_set"/>
+        <ListPreference
+            android:title="@string/title_pref_time_set"
+            android:summary="@string/summary_pref_time_set"
+            android:key="@string/key_pref_time_set"
+            android:entries="@array/setTimeTitles"
+            android:entryValues="@array/setTimeValues"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

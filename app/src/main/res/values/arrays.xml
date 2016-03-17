@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="setTimeValues">
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+    </string-array>
+    <string-array name="setTimeTitles">
+        <item>Alarm at 10</item>
+        <item>Alarm at 12</item>
+        <item>Alarm at 14</item>
+        <item>Alarm at 16</item>
+        <item>Alarm at 18</item>
+    </string-array>
+</resources>
