@@ -1,1 +1,1 @@
-include ':app', ':async', ':intentservice'
+include ':app', ':async', ':intentservice', ':parcealable'

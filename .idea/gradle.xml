@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/async" />
             <option value="$PROJECT_DIR$/intentservice" />
+            <option value="$PROJECT_DIR$/parcealable" />
           </set>
         </option>
       </GradleProjectSettings>

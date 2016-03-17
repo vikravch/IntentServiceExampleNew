@@ -11,4 +11,6 @@
     <string name="key_pref_alarm_set">prefAlarmSet</string>
     <string name="key_pref_name_set">prefNameSet</string>
     <string name="key_pref_time_set">prefTimeSet</string>
+
+    <string name="title_fragment_contacts">Contacts</string>
 </resources>
