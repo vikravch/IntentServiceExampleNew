@@ -1,5 +1,7 @@
 package ua.com.kistudio.intentserviceexample;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -22,11 +24,19 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends AppCompatActivity {
+import ua.com.kistudio.intentserviceexample.ui.FeedBackFragment;
+import ua.com.kistudio.intentserviceexample.ui.ProfileFragment;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private static final int PREF_REQUEST = 101;
     JSONObject jsonObjectUser;
+
+    // work with fragments
+    ProfileFragment profileFragment;
+    FeedBackFragment feedBackFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         intentFilter.addAction(JSONIntentService.SERVICE_ACTION_BROADCAST);
         this.registerReceiver(receiver, intentFilter);
 
+        // work with fragments
+        findViewById(R.id.btnFirstFragment).setOnClickListener(this);
+        findViewById(R.id.btnSecondFragment).setOnClickListener(this);
+        profileFragment = new ProfileFragment();
+        feedBackFragment = new FeedBackFragment();
     }
 
     BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -109,4 +124,34 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    int step = 1;
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.btnFirstFragment:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.flFragment,profileFragment)
+                        .addToBackStack("profileAdded at step "+step)
+                        .commit();
+                break;
+            case R.id.btnSecondFragment:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.flFragment,feedBackFragment)
+                        .addToBackStack("feedBackAdded at step "+step)
+                        .commit();
+                break;
+        }
+        step++;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 }

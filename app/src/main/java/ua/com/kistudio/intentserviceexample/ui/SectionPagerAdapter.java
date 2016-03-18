@@ -17,8 +17,16 @@ public class SectionPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        FragmentListView fragmentListView = new FragmentListView();
-        return fragmentListView;
+        switch (position){
+            case 0:
+                return new FragmentLv();
+            case 1:
+                return new ProfileFragment();
+            case 2:
+                return new FeedBackFragment();
+            default:
+                return null;
+        }
     }
 
     @Override
@@ -36,7 +44,8 @@ public class SectionPagerAdapter extends FragmentPagerAdapter {
                 return "Profile";
             case 2:
                 return "Feedback";
+            default:
+                return "";
         }
-        return "";
     }
 }

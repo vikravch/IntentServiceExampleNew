@@ -13,4 +13,13 @@
     <string name="key_pref_time_set">prefTimeSet</string>
 
     <string name="title_fragment_contacts">Contacts</string>
+    <string name="tvLabFeedName">Name</string>
+    <string name="tvLabFeedEmail">Email</string>
+    <string name="tvLabFeedMessage">Massage</string>
+    <string name="tvTitleProfile">profile</string>
+    <string name="tvAboutProfile">about</string>
+    <string name="fragment_first_button">First</string>
+    <string name="fragment_second_button">Second</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>

@@ -21,4 +21,22 @@
         android:text="@string/button_load"
         android:id="@+id/btnLoad"
         android:onClick="loadButton"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnFirstFragment"
+        android:text="@string/fragment_first_button"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSecondFragment"
+        android:text="@string/fragment_second_button"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/flFragment">
+
+    </FrameLayout>
 </LinearLayout>
